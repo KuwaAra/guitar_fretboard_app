@@ -1,0 +1,137 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+.app-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* 問題表示エリア */
+.problem-display-area {
+    min-height: 80px; /* 十分な高さを確保 */
+    background-color: #fffacd; /* 薄い黄色 */
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* 指板グリッド */
+.fretboard-grid {
+    display: grid;
+    grid-template-columns: 50px repeat(13, 60px); /* 弦名 + 0フレット〜12フレット */
+    gap: 1px;
+    background-color: #ddd; /* グリッド線 */
+    border: 1px solid #aaa;
+    margin-bottom: 20px;
+}
+
+.fretboard-cell {
+    background-color: #eee; /* セル背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    min-height: 40px; /* セルの高さ */
+    box-sizing: border-box; /* paddingを幅に含める */
+}
+
+.fretboard-cell.header {
+    background-color: #ccc;
+    font-weight: bold;
+    color: #555;
+}
+
+/* 指板上の問題表示セル */
+.fretboard-cell.highlight {
+    background-color: red !important; /* !important で条件付き書式の上書きを想定 */
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* 音名表示セル（●表示用）*/
+.fretboard-cell.dot {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+/* コントロールボタン */
+.controls, .note-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.note-button {
+    min-width: 80px;
+}
+
+/* 統計エリア */
+.stats-area {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#statsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#statsTable th, #statsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#statsTable th {
+    background-color: #f2f2f2;
+}
+
+/* 誤答記録のセルカラーリング (JSで直接適用することも可能だが、例として) */
+.error-count-low { background-color: #fffacd; } /* 薄い黄色 */
+.error-count-medium { background-color: #ffcc00; } /* 黄色 */
+.error-count-high { background-color: #ff6600; } /* オレンジ */
+.error-count-very-high { background-color: red; } /* 赤 */

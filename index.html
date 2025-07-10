@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギター指板学習アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ギター指板学習アプリ</h1>
+
+    <div class="app-container">
+        <div id="problemDisplay" class="problem-display-area"></div>
+
+        <div id="fretboard" class="fretboard-grid">
+            <div class="fretboard-cell header"></div>
+            <div class="fretboard-cell header">0</div>
+            <div class="fretboard-cell header">1</div>
+            <div class="fretboard-cell header">2</div>
+            <div class="fretboard-cell header">3</div>
+            <div class="fretboard-cell header">4</div>
+            <div class="fretboard-cell header">5</div>
+            <div class="fretboard-cell header">6</div>
+            <div class="fretboard-cell header">7</div>
+            <div class="fretboard-cell header">8</div>
+            <div class="fretboard-cell header">9</div>
+            <div class="fretboard-cell header">10</div>
+            <div class="fretboard-cell header">11</div>
+            <div class="fretboard-cell header">12</div>
+
+            </div>
+
+        <div class="controls">
+            <button id="newQuestionBtn">新しい問題</button>
+            <button id="resetStatsBtn">統計リセット</button>
+            <button id="toggleFocusModeBtn">苦手克服モードON/OFF</button>
+            <button id="toggleDisplayModeBtn">表示モード切替</button>
+            <button id="toggleAllNotesModeBtn">全音名表示ON/OFF</button>
+        </div>
+
+        <div class="note-buttons">
+            </div>
+
+        <div class="stats-area">
+            <h2>統計</h2>
+            <div id="statsTable">
+                </div>
+            <canvas id="correctRateChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
